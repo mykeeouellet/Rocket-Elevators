@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Rocket Elevators - Quote</title>
+		<meta name="description" content="" />
+		<meta name="Author" content="Dorin Grigoras [www.stepofweb.com]" />
+
+		<!-- mobile settings -->
+		<meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />
+		<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+
+		<!-- WEB FONTS : use %7C instead of | (pipe) -->
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600%7CRaleway:300,400,500,600,700%7CLato:300,400,400italic,600,700" rel="stylesheet" type="text/css" />
+
+		<!-- CORE CSS -->
+		<link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+		<!-- REVOLUTION SLIDER -->
+		<link href="assets/plugins/slider.revolution/css/extralayers.css" rel="stylesheet" type="text/css" />
+		<link href="assets/plugins/slider.revolution/css/settings.css" rel="stylesheet" type="text/css" />
+
+		<!-- THEME CSS -->
+		<link href="assets/css/essentials.css" rel="stylesheet" type="text/css" />
+		<link href="assets/css/layout.css" rel="stylesheet" type="text/css" />
+
+		<!-- PAGE LEVEL SCRIPTS -->
+		<link href="assets/css/header-6.css" rel="stylesheet" type="text/css" />
+		<link href="assets/css/color_scheme/red.css" rel="stylesheet" type="text/css" id="color_scheme" />
+		
+		<!--Quote CSS-->
+		<link href="assets/css/quoteform.css" rel="stylesheet" type="text/css" id="quote_style"/>
+		
+		<script>
+		
+		
+		
+		
+		
+		</script>
+	
+	</head>
+
+
+	<body class="smoothscroll enable-animation">
+
+
+	
+
+
+		<!-- wrapper -->
+		<div id="wrapper">
+
+
+			<div id="header" class="navbar-toggleable-md sticky header-md clearfix">
+
+				<!-- TOP NAV -->
+				<header id="topNav">
+					<div class="container">
+
+						<!-- Mobile Menu Button -->
+						<button class="btn btn-mobile" data-toggle="collapse" data-target=".nav-main-collapse">
+							<i class="fa fa-bars"></i>
+						</button>
+
+						<!-- Logo -->
+						<a class="logo float-left scrollTo" href="#top" style="margin: 10px;">
+							<img src="assets\images\Rocket-Elevator-Assets\R2.png" alt="" />
+						</a>
+
+						<!-- 
+							Top Nav 
+							
+							AVAILABLE CLASSES:
+							submenu-dark = dark sub menu
+						-->
+						<div class="navbar-collapse collapse float-right nav-main-collapse submenu-dark">
+							<nav class="nav-main">
+
+								<!-- 
+									.nav-onepage
+									Required for onepage navigation links
+									
+									Add .external for an external link!
+								-->
+								<ul id="topMain" class="nav nav-pills nav-main nav-onepage">
+									<li class="active"><!-- HOME -->
+										<a href="RE_home.html" style="letter-spacing: 3px; color: white;">
+											HOME
+										</a>
+									</li>
+									<li><!-- SERVICES -->
+										<a href="RE_home.html#services" style="letter-spacing: 3px; color: white;">
+											SERVICES
+										</a>
+									</li>
+									<li><!-- WORK -->
+										<a href="RE_home.html#work" style="letter-spacing: 3px; color: white;">
+											PORTFOLIO
+										</a>
+									</li>
+									<li><!-- NEWS -->
+										<a href="RE_home.html#news" style="letter-spacing: 3px; color: white;">
+											NEWS
+										</a>
+									</li>
+								
+									<li><!-- CLIENTS -->
+										<a href="RE_home.html#clients" style="letter-spacing: 3px; color: white;">
+											CLIENTS
+										</a>
+									</li>
+						
+									<li><!-- CONTACT -->
+										<a href="RE_home.html#contact" style="letter-spacing: 3px; color: white;">
+											CONTACT
+										</a>
+									</li>
+								</ul>
+
+							</nav>
+						</div>
+
+					</div>
+				</header>
+				<!-- /Top Nav -->
+					
+				<!-- Title -->
+			</div>
+
+			<div>
+				<h1 id="quote_title"> Get your quick quote!&nbsp; </h1>
+			</div>
+			
+				<!--Choose your service-->
+
+			<div id="ServiceQualityForm">
+				
+				
+					<form>
+						
+						<div id="ChooseYourService">
+						<label for="service">Choose your Service</label>
+							<select onchange="showHide()" name="service" id="service">
+								<option value=""> None </option>
+								<option value="residential">Residential</option>
+								<option value="commercial">Commercial</option>
+								<option value="corporate">Corporate</option>
+								<option value="hybrid">Hybrid</option>
+							</select>
+						</div>
+
+					</form>
+
+					<!-- Choose your Quality-->
+
+					<form>
+						
+						<div id="ChooseYourQuality">
+							<label for="productQuality">Choose the quality</label>
+							<input type="radio" name="quality" class='productQuality' id="standard" value="Standard" checked style="margin: 5px;">Standard
+							<input type="radio" name="quality" class='productQuality' id="premium" value="Premium" style="margin: 5px;">Premium
+							<input type="radio" name="quality" class='productQuality' id="excelium" value="Excelium" style="margin: 5px;">Excelium
+						</div>
+
+					</form>
+			</div>
+					<!-- Residential Services Quoting -->
+					<div onchange="calculate()" id="form1" style="display: none;">
+					<form id="residentialquote" style="margin: 25px;">
+						
+						<div id="res_app_input">
+							<label for="numAppartements_res">How many appartements do you have?
+							<input type="text" name="appartements_res" id="numAppartements_res">
+						</label>
+							</div>
+						<div id="res_floors_input">
+							<label for="numFloors_res">How many floors do you have?
+							<input type="text" name="floors_res" id="numFloors_res">
+							</label>
+							</div>
+						<div id="res_basement_input">
+							<label for="numBasements_res">How many basements do you have?
+							<input type="text" name="basements_res" id="numBasements_res">
+							</label>
+						</div>
+
+					</form>
+		</div>
+	
+
+					<!-- Commercial Services Quoting -->
+				<div onchange="calculate()" id="form2" style="display: none;">
+					<form id="commercialquote">
+						
+						<div id="comm_business_input">
+							<label for="numBusiness_comm">How many businesses do you have?
+							<input type="text" name="business_comm" id="numBusiness_comm">
+							</label>
+						</div>
+						<div id="comm_floors_input">
+							<label for="numFloors_comm">How many floors do you have?
+							<input type="text" name="floors_comm" id="numFloors_comm">
+							</label>
+						</div>
+						<div id="comm_basement_input">
+							<label for="numBasements_comm">How many basements do you have?
+							<input type="text" name="basements_comm" id="numBasements_comm">
+							</label>
+						</div>
+						<div id="comm_parkings_input">
+							<label for="numParking_comm">How many parkings do you have?
+							<input type="text" name="parkings_comm" id="numParkings_comm">
+							</label>
+						</div>
+						<div id="comm_elevator_input">
+							<label for="numElevators_comm">How many elevators do you want?
+							<input type="text" name="elevators_comm" id="numElevators_comm">
+							</label>
+						</div>
+
+					</form>	
+				</div>
+					<!-- Corporate Services Quoting -->
+				<div onchange="calculate()" id="form3" style="display: none;">
+					<form id="corporatequote">
+						
+						<div id="corpo_tenant_input">
+							<label for="numTenant_corpo">How many tenant companies is there in the building?
+							<input type="text" name="tenant_corpo" id="numTenant_corpo">
+							</label>
+						</div>
+						<div id="corpo_floors_input">
+							<label for="numFloors_corpo">How many floors do you have?
+							<input type="text" name="floors_corpo" id="numFloors_corpo">
+							</label>
+						</div>
+						<div id="corpo_basements_input">
+							<label for="numBasements_corpo">How many basements do you have?
+							<input type="text" name="basements_corpo" id="numBasements_corpo">
+							</label>
+						</div>
+						<div id="corpo_parkings_input">
+							<label for="numParkings_corpo">How many parkings do you have?
+							<input type="text" name="parkings_corpo" id="numParkings_corpo">
+							</label>
+						</div>
+						<div id="corpo_renters_input">
+							<label for="numRenters_corpo">How many tenants per floors do you have?
+							<input type="text" name="renters_corpo" id="numRenters_corpo">
+							</label>
+						</div>
+
+					</form>
+
+				</div o>
+					<!--Hybrid Services-->
+				<div onchange="calculate()" id="form4" style="display: none;">
+					<form id="hybridquote">
+					
+						<div id="hyb_business_input">
+							<label for="numBusiness_hyb">How many businesses do you have?
+							<input type="text" name="business_hyb" id="numBusiness_hyb">
+							</label>
+						</div>
+						<div id="hyb_floors_input">
+							<label for="numFloors_hyb">How many floors do you have?
+							<input type="text" name="floors_hyb" id="numFloors_hyb">
+							</label>
+						</div>
+						<div id="hyb_basements_input">
+							<label for="numBasements_hyb">How many basements do you have?
+							<input type="text" name="basements_hyb" id="numBasements_hyb">
+							</label>
+						</div>
+						<div id="hyb_parkings_input">
+							<label for="numParkings_hyb">How many parkings do you have?
+							<input type="text" name="parkings_hyb" id="numParkings_hyb">
+							</label>
+						</div>
+						<div id="hyb_renters_input">
+							<label for="numRenters_hyb">How many tenants per floors do you have?
+							<input type="text" name="renters_hyb" id="numRenters_hyb">
+							</label>
+						</div>
+						<div id="hyb_hours_input">
+							<label for="numHours">How many hours of activity is there in the building per day? 
+								<input type="text" name="hours_hyb" id="numHours_hyb" max="24" min="0">
+							</label>
+						</div>
+
+					</form>
+				</div>	
+
+		
+			<!--<button test 2>
+			<div id="ButtonDiv">
+				<form>
+					<label for="calculateButton" id="buttonLabel">Ready to get your quote? 
+					<input class="button" type="button" id="calculateButton" value="Click here!" onclick="calculate()">
+					</label>
+				</form>
+			</div>-->
+
+			<!--Quote Results-->
+			<div id="resultsDiv">
+				<form>
+					<div class="results" id="elevatorssugg">
+						<label for="">Number of elevators suggested : <input type="text" value="" id="displayElevatorQuantity"></label>
+					</div>
+					<div class="results" id="price">
+						<label for="">Total Price : <input type="text" value="" id="displayTotalPrice"></label>
+					</div>
+					<div class="results" id="priceUnit">
+						<label for="">Elevator price : <input type="text" value="" id="displayElevPrice"></label>
+					</div>
+					<div class="results" id="installFees">
+					<label for="">Installation fees : <input type="text" value="" id="displayInstallPrice"></label>
+					</div>
+				</form>
+			</div>
+
+			
+			
+
+
+			<script>
+			
+				
+
+			</script>
+
+
+           	 <!-- FORM -->
+
+			<!-- FOOTER -->
+			<footer id="footer">
+				<div class="container" >
+
+
+					<div class="row">
+
+						<!-- col #1 -->
+						<div class="col-md-8">
+
+							<h3 class="" style="letter-spacing: 2px;">Why Rocket Elevators?</h3>
+
+							<!-- Small Description -->
+							<p style="letter-spacing: 1px;">
+								We lead the industry by putting people first.<br>
+								We move millions of people a day but never lose sight of what each passenger wants and needs.<br> 
+								It’s been that way since we entered the elevator industry more than 40 years ago.<br> 
+								And it’s why we continue to set the standard for the industry we created.
+							</p>
+							<h2>(581) 701-0303</h2>
+						</div>
+						<!-- /col #1 -->
+
+						<!-- col #2 -->
+						<div class="col-md-4">
+							<h3 class="letter-spacing-1">KEEP IN TOUCH</h3>
+
+							<!-- Newsletter Form -->
+							<p>Subscribe to Our Newsletter to get Important News & Offers</p>
+
+							<form class="validate" action="php/newsletter.php" method="post" data-success="Subscribed! Thank you!" data-toastr-position="bottom-right">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+									<input type="email" id="email" name="email" class="form-control required" placeholder="Enter your Email">
+									<span class="input-group-btn">
+										<button class="btn btn-success" type="submit">Subscribe</button>
+									</span>
+								</div>
+							</form>
+							<!-- /Newsletter Form -->
+
+
+						</div>
+						<!-- /col #2 -->
+
+					</div>
+
+
+				</div>
+
+				<div class="copyright">
+					<div class="container">
+						<ul class="float-right m-0 list-inline mobile-block">
+							<li><a href="#">Terms &amp; Conditions</a></li>
+							<li>&bull;</li>
+							<li><a href="#">Privacy</a></li>
+						</ul>
+						&copy; All Rights Reserved, Company LTD
+					</div>
+				</div>
+
+			</footer>
+			<!-- /FOOTER -->
+
+		</div>
+		<!-- /wrapper -->
+
+
+		<!-- SCROLL TO TOP -->
+		<a href="#" id="toTop"></a>
+
+
+		<!-- PRELOADER -->
+		<div id="preloader">
+			<div class="inner">
+				<span class="loader"></span>
+			</div>
+		</div><!-- /PRELOADER -->
+
+
+		<!-- JAVASCRIPT FILES -->
+		<script>var plugin_path = 'assets/plugins/';</script>
+		<script src="assets/plugins/jquery/jquery-3.3.1.min.js"></script>
+
+		<script src="assets/js/scripts.js"></script>
+		
+		<!-- STYLESWITCHER - REMOVE -->
+	<!---<script async src="demo_files/styleswitcher/styleswitcher.js"></script>-->
+
+		<!-- REVOLUTION SLIDER -->
+		<script src="assets/plugins/slider.revolution/js/jquery.themepunch.tools.min.js"></script>
+		<script src="assets/plugins/slider.revolution/js/jquery.themepunch.revolution.min.js"></script>
+		<script src="assets/js/view/demo.revolution_slider.js"></script>
+
+		<!-- PAGELEVEL SCRIPTS -->
+		<script src="assets/js/contact.js"></script>
+
+		<!-- 
+			GMAP.JS 
+			http://hpneo.github.io/gmaps/
+		-->
+		<script src="//maps.google.com/maps/api/js?key=AIzaSyCqCn84CgZN6o1Xc3P4dM657HIxkX3jzPY"></script>
+		<script src="assets/plugins/gmaps.js"></script>
+		<script>
+
+			jQuery(document).ready(function(){
+
+				/**
+					@BASIC GOOGLE MAP
+				**/
+				var map2 = new GMaps({
+					div: '#map2',
+					lat: -12.043333,
+					lng: -77.028333,
+					scrollwheel: false
+				});
+
+				var marker = map2.addMarker({
+					lat: -12.043333,
+					lng: -77.028333,
+					title: 'Company, Inc.'
+				});
+
+			});
+
+		
+
+		</script>
+		
+
+
+		<script type="text/javascript"> 
+
+		//Service and Quality variables//
+		var service = document.getElementById('service').value;
+		var quality = document.querySelector('input[class="productQuality"]:checked').value;
+
+
+		//Residential Variables
+		var NumAppRes = document.getElementById('numAppartements_res').value;
+		var NumFloorsRes = document.getElementById('numFloors_res').value;
+		var NumBaseRes = document.getElementById('numBasements_res').value;
+
+		//Commercial Variables//
+		var NumBusComm = document.getElementById('numBusiness_comm').value;
+		var NumFloorsComm = document.getElementById('numFloors_comm').value;
+		var NumBaseComm = document.getElementById('numBasements_comm').value;
+		var NumParkComm = document.getElementById('numParkings_comm').value;
+		var NumElevComm = document.getElementById('numElevators_comm').value;
+
+
+		//Corporate Variables//
+		var NumTenantCorp = document.getElementById('numTenant_corpo').value;
+		var NumFloorsCorp = document.getElementById('numFloors_corpo').value;
+		var NumBaseCorp = document.getElementById('numBasements_corpo').value;
+		var NumParkCorp = document.getElementById('numParkings_corpo').value;
+		var NumRentCorp = document.getElementById('numRenters_corpo').value;
+
+		//Hybrid Variables//
+		var NumBusHyb = document.getElementById('numBusiness_hyb').value;
+		var NumFloorsHyb = document.getElementById('numFloors_hyb').value;
+		var NumBaseHyb = document.getElementById('numBasements_hyb').value;
+		var NumParkHyb = document.getElementById('numParkings_hyb').value;
+		var NumRentHyb = document.getElementById('numRenters_hyb').value;
+		var NumHoursHyb = document.getElementById('numHours_hyb').value;
+		
+		//Fonction pour montrer/cacher les differents formulaires//
+		function showHide() {
+			
+			var service = document.getElementById('service').value;
+				
+				if (service ==="residential") { 
+					document.getElementById("form1").style.display = "block";
+					document.getElementById("form2").style.display = "none";
+					document.getElementById("form3").style.display = "none";
+					document.getElementById("form4").style.display = "none";
+					
+					}
+				else if (service === "commercial") {
+					document.getElementById("form1").style.display = "none";
+					document.getElementById("form2").style.display = "block";
+					document.getElementById("form3").style.display = "none";
+					document.getElementById("form4").style.display = "none";
+					}
+				else if (service ==="corporate") {
+					document.getElementById("form1").style.display = "none";
+					document.getElementById("form2").style.display = "none";
+					document.getElementById("form3").style.display = "block";
+					document.getElementById("form4").style.display = "none";
+					
+					}
+				else if (service ==="hybrid") {
+					document.getElementById("form1").style.display = "none";
+					document.getElementById("form2").style.display = "none";
+					document.getElementById("form3").style.display = "none";
+					document.getElementById("form4").style.display = "block";
+					
+					}	
+				else if (service ==="") {
+					document.getElementById("form1").style.display = "none";
+					document.getElementById("form2").style.display = "none";
+					document.getElementById("form3").style.display = "none";
+					document.getElementById("form4").style.display = "none";
+					}
+		}
+
+		//Fonction pour calculer//
+		
+		function calculate() {
+			var quality = document.querySelector('input[class="productQuality"]:checked').value;
+			var servicelol = document.getElementById('service').value;
+			var colcomm = document.getElementById("numElevators_comm").value;
+			var x1 = NumAppRes / NumFloorsRes;
+			console.log("Bonjour");
+				
+				if(servicelol === "commercial" && quality === "Standard") {
+				document.getElementById("displayElevatorQuantity").value = colcomm;
+				document.getElementById("displayElevPrice").value = colcomm * 7565;
+				document.getElementById("displayInstallPrice").value = (colcomm * 7565) / 10;
+				document.getElementById("displayTotalPrice").value = ((colcomm * 7565) / 10) + (colcomm * 7565);
+				console.log("allo");
+				
+				} 
+				else if (servicelol === "commercial" && quality === "Premium") {
+				document.getElementById("displayElevatorQuantity").value = colcomm;
+				document.getElementById("displayElevPrice").value = colcomm * 12345;
+				document.getElementById("displayInstallPrice").value = (colcomm * 12345) / 13;
+				document.getElementById("displayTotalPrice").value = ((colcomm * 12345) / 13) + (colcomm * 12345);
+				console.log("allo???");
+				}
+				else if (servicelol = "commercial" && quality === "Excelium") {
+				document.getElementById("displayElevatorQuantity").value = colcomm;
+				document.getElementById("displayElevPrice").value = colcomm * 15400;
+				document.getElementById("displayInstallPrice").value = (colcomm * 15400) / 16;
+				document.getElementById("displayTotalPrice").value = ((colcomm * 15400) / 16) + (colcomm * 15400);
+				console.log("allo osti");
+				}
+				else if (servicelol === "residential" && quality === "Standard") {
+				
+				document.getElementById("displayElevatorQuantity").value = colres;
+				document.getElementById("displayElevPrice").value = colres * 7565;
+				console.log("EILLE allo?!");
+			
+				}		
+		}
+
+				
+		
+		</script>
+		
+		
+		
+		
+	
+	</body>
+</html>

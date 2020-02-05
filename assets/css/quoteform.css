@@ -1,0 +1,62 @@
+body {
+
+    background:gray;
+   
+}
+
+
+
+
+
+#quote_title {
+    font-size: 50px;
+    margin: 50px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    letter-spacing: 4px;
+    color: white;
+    text-align: center;
+    
+    border: 20px;
+       
+}
+
+#serviceform {
+    color: white;
+
+}
+
+#ChooseYourService {
+    color: white;
+    margin: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 2px;
+}
+
+#ChooseYourQuality {
+    color: white;
+    margin: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 2px;
+}
+
+#form1 #form2 #form3 #form4 {
+    color: white;
+
+
+}
+
+.button {
+    background-color: rgb(255, 0, 0);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  .button:hover {
+    background-color: rgb(133, 4, 4);
+  }

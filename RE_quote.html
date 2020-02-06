@@ -166,7 +166,7 @@
 					</form>
 			</div>
 					<!-- Residential Services Quoting -->
-					<div onchange="calculate()" id="form1" style="display: none;">
+					<div id="form1" style="display: none;">
 					<form id="residentialquote" style="margin: 25px;">
 						
 						<div id="res_app_input">
@@ -190,7 +190,7 @@
 	
 
 					<!-- Commercial Services Quoting -->
-				<div onchange="calculate()" id="form2" style="display: none;">
+				<div id="form2" style="display: none;">
 					<form id="commercialquote">
 						
 						<div id="comm_business_input">
@@ -222,7 +222,7 @@
 					</form>	
 				</div>
 					<!-- Corporate Services Quoting -->
-				<div onchange="calculate()" id="form3" style="display: none;">
+				<div id="form3" style="display: none;">
 					<form id="corporatequote">
 						
 						<div id="corpo_tenant_input">
@@ -255,7 +255,7 @@
 
 				</div o>
 					<!--Hybrid Services-->
-				<div onchange="calculate()" id="form4" style="display: none;">
+				<div id="form4" style="display: none;">
 					<form id="hybridquote">
 					
 						<div id="hyb_business_input">
@@ -293,14 +293,14 @@
 				</div>	
 
 		
-			<!--<button test 2>
+			<button test 2>
 			<div id="ButtonDiv">
 				<form>
 					<label for="calculateButton" id="buttonLabel">Ready to get your quote? 
 					<input class="button" type="button" id="calculateButton" value="Click here!" onclick="calculate()">
 					</label>
 				</form>
-			</div>-->
+			</div>
 
 			<!--Quote Results-->
 			<div id="resultsDiv">
@@ -541,42 +541,121 @@
 
 		//Fonction pour calculer//
 		
-		function calculate() {
+			function calculate() {
+
 			var quality = document.querySelector('input[class="productQuality"]:checked').value;
 			var servicelol = document.getElementById('service').value;
 			var colcomm = document.getElementById("numElevators_comm").value;
-			var x1 = NumAppRes / NumFloorsRes;
-			console.log("Bonjour");
-				
+			
+			var NumAppRes = document.getElementById('numAppartements_res').value;
+			var NumFloorsRes = document.getElementById('numFloors_res').value;
+			var moyenne = NumAppRes / NumFloorsRes;
+			var numCages = Math.ceil(moyenne / 6);
+			var numColRes = Math.ceil(NumFloorsRes / 20);
+			var totalElev = numColRes * numCages; 
+
+			var occupantsTotalcorpo = Number(NumRentCorp) * (parseInt(NumFloorsCorp) + parseInt(NumBaseCorp));
+			var ascenseurscorpo = Math.ceil(occupantsTotalcorpo / 1000);
+			var colonnescorpo = Math.ceil((Number(NumFloorsCorp) + Number(NumBaseCorp)) / 20);
+			var totalAscenseurcorpo = Math.ceil(ascenseurscorpo / colonnescorpo) * colonnescorpo;
+
+			var occupantsTotalhyb = NumRentHyb * (Number(NumFloorsHyb) + Number(NumBaseHyb));
+			var ascenseurshyb = Math.ceil(occupantsTotalhyb / 1000);
+			var colonneshyb = Math.ceil((Number(NumFloorsHyb) + Number(NumBaseHyb)) / 20);
+			var totalAscenseurhyb = Math.ceil(ascenseurshyb / colonneshyb) * colonneshyb;
+			
+			
 				if(servicelol === "commercial" && quality === "Standard") {
-				document.getElementById("displayElevatorQuantity").value = colcomm;
-				document.getElementById("displayElevPrice").value = colcomm * 7565;
-				document.getElementById("displayInstallPrice").value = (colcomm * 7565) / 10;
-				document.getElementById("displayTotalPrice").value = ((colcomm * 7565) / 10) + (colcomm * 7565);
-				console.log("allo");
+					
+					document.getElementById("displayElevatorQuantity").value = colcomm;
+					document.getElementById("displayElevPrice").value = colcomm * 7565;
+					document.getElementById("displayInstallPrice").value = (colcomm * 7565) / 10;
+					document.getElementById("displayTotalPrice").value = ((colcomm * 7565) / 10) + (colcomm * 7565);
 				
 				} 
 				else if (servicelol === "commercial" && quality === "Premium") {
-				document.getElementById("displayElevatorQuantity").value = colcomm;
-				document.getElementById("displayElevPrice").value = colcomm * 12345;
-				document.getElementById("displayInstallPrice").value = (colcomm * 12345) / 13;
-				document.getElementById("displayTotalPrice").value = ((colcomm * 12345) / 13) + (colcomm * 12345);
-				console.log("allo???");
-				}
-				else if (servicelol = "commercial" && quality === "Excelium") {
-				document.getElementById("displayElevatorQuantity").value = colcomm;
-				document.getElementById("displayElevPrice").value = colcomm * 15400;
-				document.getElementById("displayInstallPrice").value = (colcomm * 15400) / 16;
-				document.getElementById("displayTotalPrice").value = ((colcomm * 15400) / 16) + (colcomm * 15400);
-				console.log("allo osti");
-				}
-				else if (servicelol === "residential" && quality === "Standard") {
+					
+					document.getElementById("displayElevatorQuantity").value = colcomm;
+					document.getElementById("displayElevPrice").value = colcomm * 12345;
+					document.getElementById("displayInstallPrice").value = (colcomm * 12345) / 13;
+					document.getElementById("displayTotalPrice").value = ((colcomm * 12345) / 13) + (colcomm * 12345);
 				
-				document.getElementById("displayElevatorQuantity").value = colres;
-				document.getElementById("displayElevPrice").value = colres * 7565;
-				console.log("EILLE allo?!");
+				}
+				else if (servicelol === "commercial" && quality === "Excelium") {
+					
+					document.getElementById("displayElevatorQuantity").value = colcomm;
+					document.getElementById("displayElevPrice").value = colcomm * 15400;
+					document.getElementById("displayInstallPrice").value = (colcomm * 15400) / 16;
+					document.getElementById("displayTotalPrice").value = ((colcomm * 15400) / 16) + (colcomm * 15400);
+				
+				}
+				else if (servicelol ==="residential" && quality ==="Standard") {
+					
+					document.getElementById("displayElevatorQuantity").value = Math.ceil(totalElev);
+					document.getElementById("displayElevPrice").value = totalElev * 7565;
+					document.getElementById("displayInstallPrice").value = (totalElev * 7565) / 10;
+					document.getElementById("displayTotalPrice").value = ((totalElev * 7565) / 10) + (totalElev * 7565);
+				}
+				else if (servicelol ==="residential" && quality ==="Premium") {
+					document.getElementById("displayElevatorQuantity").value = Math.ceil(totalElev);
+					document.getElementById("displayElevPrice").value = (totalElev * 12345);
+					document.getElementById("displayInstallPrice").value = (totalElev * 12345) / 13;
+					document.getElementById("displayTotalPrice").value = ((totalElev * 12345) / 13) + (totalElev * 12345);
+				}
+				else if (servicelol ==="residential" && quality ==="Excelium") {
+
+					document.getElementById("displayElevatorQuantity").value = totalElev;
+					document.getElementById("displayElevPrice").value = (totalElev * 15400);
+					document.getElementById("displayInstallPrice").value = (totalElev * 15400) / 16;
+					document.getElementById("displayTotalPrice").value = ((totalElev * 15400) / 16) + (totalElev * 15400);
+				}
+				else if (servicelol ==="corporate" && quality ==="Standard") {
+
+					document.getElementById("displayElevatorQuantity").value = Number(totalAscenseurcorpo);
+					document.getElementById("displayElevPrice").value = Number(totalAscenseurcorpo * 7565);
+					document.getElementById("displayInstallPrice").value = Number((totalAscenseurcorpo * 7565) / 10);
+					document.getElementById("displayTotalPrice").value = Number((totalAscenseurcorpo * 7565) + ((totalAscenseurcorpo * 7565) / 10));
+				}
+				else if (servicelol ==="corporate" && quality ==="Premium") {
+
+					document.getElementById("displayElevatorQuantity").value = totalAscenseurcorpo;
+					document.getElementById("displayElevPrice").value = totalAscenseurcorpo * 12345;
+					document.getElementById("displayInstallPrice").value = (totalAscenseurcorpo * 12345) / 13;
+					document.getElementById("displayTotalPrice").value = (totalAscenseurcorpo * 12345) + ((totalAscenseurcorpo * 12345) / 13);
+				}
+				else if (servicelol ==="corporate" && quality ==="Excelium") {
+
+					document.getElementById("displayElevatorQuantity").value = totalAscenseurcorpo;
+					document.getElementById("displayElevPrice").value = totalAscenseurcorpo * 15400;
+					document.getElementById("displayInstallPrice").value = (totalAscenseurcorpo * 15400) / 16;
+					document.getElementById("displayTotalPrice").value = (totalAscenseurcorpo * 15400) + ((totalAscenseurcorpo * 15400) / 16);
+				}
+				else if (servicelol ==="hybrid" && quality ==="Standard") {
+
+					document.getElementById("displayElevatorQuantity").value = parseInt(totalAscenseurhyb);
+					document.getElementById("displayElevPrice").value = totalAscenseurhyb * 7565;
+					document.getElementById("displayInstallPrice").value = (totalAscenseurhyb * 7565) / 10;
+					document.getElementById("displayTotalPrice").value = (totalAscenseurhyb * 7565) + ((totalAscenseurhyb * 7565) / 10);
+				}
+				else if (servicelol ==="hybrid" && quality ==="Premium") {
+					document.getElementById("displayElevatorQuantity").value = totalAscenseurhyb;
+					document.getElementById("displayElevPrice").value = totalAscenseurhyb * 12345;
+					document.getElementById("displayInstallPrice").value = (totalAscenseurhyb * 12345) / 13;
+					document.getElementById("displayTotalPrice").value = (totalAscenseurhyb * 12345) + ((totalAscenseurhyb * 12345) / 13);
+				}
+				else if (servicelol ==="hybrid" && quality ==="Excelium") {
+
+					document.getElementById("displayElevatorQuantity").value = totalAscenseurhyb;
+					document.getElementById("displayElevPrice").value = totalAscenseurhyb * 15400;
+					document.getElementById("displayInstallPrice").value = (totalAscenseurhyb * 15400) / 16;
+					document.getElementById("displayTotalPrice").value = (totalAscenseurhyb * 15400) + ((totalAscenseurhyb * 15400) / 16);
+				}	
+	
+
+				
+				
 			
-				}		
+						
 		}
 
 				

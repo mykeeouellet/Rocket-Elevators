@@ -170,17 +170,17 @@
 					<form id="residentialquote" style="margin: 25px;">
 						
 						<div id="res_app_input">
-							<label for="numAppartements_res">How many appartements do you have?
+							<label for="numAppartements_res">How many appartements?
 							<input type="text" name="appartements_res" id="numAppartements_res">
 						</label>
 							</div>
 						<div id="res_floors_input">
-							<label for="numFloors_res">How many floors do you have?
+							<label for="numFloors_res">How many floors?
 							<input type="text" name="floors_res" id="numFloors_res">
 							</label>
 							</div>
 						<div id="res_basement_input">
-							<label for="numBasements_res">How many basements do you have?
+							<label for="numBasements_res">How many basements?
 							<input type="text" name="basements_res" id="numBasements_res">
 							</label>
 						</div>
@@ -194,22 +194,22 @@
 					<form id="commercialquote">
 						
 						<div id="comm_business_input">
-							<label for="numBusiness_comm">How many businesses do you have?
+							<label for="numBusiness_comm">How many businesses?
 							<input type="text" name="business_comm" id="numBusiness_comm">
 							</label>
 						</div>
 						<div id="comm_floors_input">
-							<label for="numFloors_comm">How many floors do you have?
+							<label for="numFloors_comm">How many floors?
 							<input type="text" name="floors_comm" id="numFloors_comm">
 							</label>
 						</div>
 						<div id="comm_basement_input">
-							<label for="numBasements_comm">How many basements do you have?
+							<label for="numBasements_comm">How many basements?
 							<input type="text" name="basements_comm" id="numBasements_comm">
 							</label>
 						</div>
 						<div id="comm_parkings_input">
-							<label for="numParking_comm">How many parkings do you have?
+							<label for="numParking_comm">How many parkings?
 							<input type="text" name="parkings_comm" id="numParkings_comm">
 							</label>
 						</div>
@@ -231,22 +231,22 @@
 							</label>
 						</div>
 						<div id="corpo_floors_input">
-							<label for="numFloors_corpo">How many floors do you have?
+							<label for="numFloors_corpo">How many floors?
 							<input type="text" name="floors_corpo" id="numFloors_corpo">
 							</label>
 						</div>
 						<div id="corpo_basements_input">
-							<label for="numBasements_corpo">How many basements do you have?
+							<label for="numBasements_corpo">How many basements?
 							<input type="text" name="basements_corpo" id="numBasements_corpo">
 							</label>
 						</div>
 						<div id="corpo_parkings_input">
-							<label for="numParkings_corpo">How many parkings do you have?
+							<label for="numParkings_corpo">How many parkings?
 							<input type="text" name="parkings_corpo" id="numParkings_corpo">
 							</label>
 						</div>
 						<div id="corpo_renters_input">
-							<label for="numRenters_corpo">How many tenants per floors do you have?
+							<label for="numRenters_corpo">How many tenants per floors?
 							<input type="text" name="renters_corpo" id="numRenters_corpo">
 							</label>
 						</div>
@@ -259,27 +259,27 @@
 					<form id="hybridquote">
 					
 						<div id="hyb_business_input">
-							<label for="numBusiness_hyb">How many businesses do you have?
+							<label for="numBusiness_hyb">How many businesses?
 							<input type="text" name="business_hyb" id="numBusiness_hyb">
 							</label>
 						</div>
 						<div id="hyb_floors_input">
-							<label for="numFloors_hyb">How many floors do you have?
+							<label for="numFloors_hyb">How many floors?
 							<input type="text" name="floors_hyb" id="numFloors_hyb">
 							</label>
 						</div>
 						<div id="hyb_basements_input">
-							<label for="numBasements_hyb">How many basements do you have?
+							<label for="numBasements_hyb">How many basements?
 							<input type="text" name="basements_hyb" id="numBasements_hyb">
 							</label>
 						</div>
 						<div id="hyb_parkings_input">
-							<label for="numParkings_hyb">How many parkings do you have?
+							<label for="numParkings_hyb">How many parkings?
 							<input type="text" name="parkings_hyb" id="numParkings_hyb">
 							</label>
 						</div>
 						<div id="hyb_renters_input">
-							<label for="numRenters_hyb">How many tenants per floors do you have?
+							<label for="numRenters_hyb">How many tenants per floors?
 							<input type="text" name="renters_hyb" id="numRenters_hyb">
 							</label>
 						</div>
@@ -315,7 +315,7 @@
 						<label for="">Elevator price : <input type="text" value="" id="displayElevPrice"></label>
 					</div>
 					<div class="results" id="installFees">
-					<label for="">Installation fees : <input type="text" value="" id="displayInstallPrice"></label>
+					<label for="">Installation cost : <input type="text" value="" id="displayInstallPrice"></label>
 					</div>
 				</form>
 			</div>
@@ -554,101 +554,109 @@
 			var numColRes = Math.ceil(NumFloorsRes / 20);
 			var totalElev = numColRes * numCages; 
 
+			var NumFloorsCorp = document.getElementById("numFloors_corpo").value;
+			var NumBaseCorp = document.getElementById("numBasements_corpo").value;
+			var NumRentCorp = document.getElementById("numRenters_corpo").value;
 			var occupantsTotalcorpo = Number(NumRentCorp) * (parseInt(NumFloorsCorp) + parseInt(NumBaseCorp));
 			var ascenseurscorpo = Math.ceil(occupantsTotalcorpo / 1000);
 			var colonnescorpo = Math.ceil((Number(NumFloorsCorp) + Number(NumBaseCorp)) / 20);
 			var totalAscenseurcorpo = Math.ceil(ascenseurscorpo / colonnescorpo) * colonnescorpo;
 
+			
+			var NumFloorsHyb = document.getElementById("numFloors_hyb").value;
+			var NumBaseHyb = document.getElementById("numBasements_hyb").value;
+			var NumRentHyb = document.getElementById("numRenters_hyb").value;
 			var occupantsTotalhyb = NumRentHyb * (Number(NumFloorsHyb) + Number(NumBaseHyb));
 			var ascenseurshyb = Math.ceil(occupantsTotalhyb / 1000);
 			var colonneshyb = Math.ceil((Number(NumFloorsHyb) + Number(NumBaseHyb)) / 20);
 			var totalAscenseurhyb = Math.ceil(ascenseurshyb / colonneshyb) * colonneshyb;
 			
-			
+	
+
 				if(servicelol === "commercial" && quality === "Standard") {
 					
 					document.getElementById("displayElevatorQuantity").value = colcomm;
 					document.getElementById("displayElevPrice").value = colcomm * 7565;
-					document.getElementById("displayInstallPrice").value = (colcomm * 7565) / 10;
-					document.getElementById("displayTotalPrice").value = ((colcomm * 7565) / 10) + (colcomm * 7565);
+					document.getElementById("displayInstallPrice").value = (colcomm * 7565) * 0.10;
+					document.getElementById("displayTotalPrice").value = ((colcomm * 7565) * 0.10) + (colcomm * 7565);
 				
 				} 
 				else if (servicelol === "commercial" && quality === "Premium") {
 					
 					document.getElementById("displayElevatorQuantity").value = colcomm;
 					document.getElementById("displayElevPrice").value = colcomm * 12345;
-					document.getElementById("displayInstallPrice").value = (colcomm * 12345) / 13;
-					document.getElementById("displayTotalPrice").value = ((colcomm * 12345) / 13) + (colcomm * 12345);
+					document.getElementById("displayInstallPrice").value = (colcomm * 12345) * 0.13;
+					document.getElementById("displayTotalPrice").value = ((colcomm * 12345) * 0.13) + (colcomm * 12345);
 				
 				}
 				else if (servicelol === "commercial" && quality === "Excelium") {
 					
 					document.getElementById("displayElevatorQuantity").value = colcomm;
 					document.getElementById("displayElevPrice").value = colcomm * 15400;
-					document.getElementById("displayInstallPrice").value = (colcomm * 15400) / 16;
-					document.getElementById("displayTotalPrice").value = ((colcomm * 15400) / 16) + (colcomm * 15400);
+					document.getElementById("displayInstallPrice").value = (colcomm * 15400) * 0.16;
+					document.getElementById("displayTotalPrice").value = ((colcomm * 15400) * 0.16) + (colcomm * 15400);
 				
 				}
 				else if (servicelol ==="residential" && quality ==="Standard") {
 					
 					document.getElementById("displayElevatorQuantity").value = Math.ceil(totalElev);
 					document.getElementById("displayElevPrice").value = totalElev * 7565;
-					document.getElementById("displayInstallPrice").value = (totalElev * 7565) / 10;
-					document.getElementById("displayTotalPrice").value = ((totalElev * 7565) / 10) + (totalElev * 7565);
+					document.getElementById("displayInstallPrice").value = (totalElev * 7565) * 0.10;
+					document.getElementById("displayTotalPrice").value = ((totalElev * 7565) * 0.10) + (totalElev * 7565);
 				}
 				else if (servicelol ==="residential" && quality ==="Premium") {
 					document.getElementById("displayElevatorQuantity").value = Math.ceil(totalElev);
 					document.getElementById("displayElevPrice").value = (totalElev * 12345);
-					document.getElementById("displayInstallPrice").value = (totalElev * 12345) / 13;
-					document.getElementById("displayTotalPrice").value = ((totalElev * 12345) / 13) + (totalElev * 12345);
+					document.getElementById("displayInstallPrice").value = (totalElev * 12345) * 0.13;
+					document.getElementById("displayTotalPrice").value = ((totalElev * 12345) * 0.13) + (totalElev * 12345);
 				}
 				else if (servicelol ==="residential" && quality ==="Excelium") {
 
 					document.getElementById("displayElevatorQuantity").value = totalElev;
 					document.getElementById("displayElevPrice").value = (totalElev * 15400);
-					document.getElementById("displayInstallPrice").value = (totalElev * 15400) / 16;
-					document.getElementById("displayTotalPrice").value = ((totalElev * 15400) / 16) + (totalElev * 15400);
+					document.getElementById("displayInstallPrice").value = (totalElev * 15400) * 0.16;
+					document.getElementById("displayTotalPrice").value = ((totalElev * 15400) * 0.16) + (totalElev * 15400);
 				}
 				else if (servicelol ==="corporate" && quality ==="Standard") {
 
 					document.getElementById("displayElevatorQuantity").value = Number(totalAscenseurcorpo);
 					document.getElementById("displayElevPrice").value = Number(totalAscenseurcorpo * 7565);
-					document.getElementById("displayInstallPrice").value = Number((totalAscenseurcorpo * 7565) / 10);
-					document.getElementById("displayTotalPrice").value = Number((totalAscenseurcorpo * 7565) + ((totalAscenseurcorpo * 7565) / 10));
+					document.getElementById("displayInstallPrice").value = Number((totalAscenseurcorpo * 7565) * 0.10);
+					document.getElementById("displayTotalPrice").value = Number((totalAscenseurcorpo * 7565) + ((totalAscenseurcorpo * 7565) * 0.10));
 				}
 				else if (servicelol ==="corporate" && quality ==="Premium") {
 
 					document.getElementById("displayElevatorQuantity").value = totalAscenseurcorpo;
 					document.getElementById("displayElevPrice").value = totalAscenseurcorpo * 12345;
-					document.getElementById("displayInstallPrice").value = (totalAscenseurcorpo * 12345) / 13;
-					document.getElementById("displayTotalPrice").value = (totalAscenseurcorpo * 12345) + ((totalAscenseurcorpo * 12345) / 13);
+					document.getElementById("displayInstallPrice").value = (totalAscenseurcorpo * 12345) * 0.13;
+					document.getElementById("displayTotalPrice").value = (totalAscenseurcorpo * 12345) + ((totalAscenseurcorpo * 12345) * 0.13);
 				}
 				else if (servicelol ==="corporate" && quality ==="Excelium") {
 
 					document.getElementById("displayElevatorQuantity").value = totalAscenseurcorpo;
 					document.getElementById("displayElevPrice").value = totalAscenseurcorpo * 15400;
-					document.getElementById("displayInstallPrice").value = (totalAscenseurcorpo * 15400) / 16;
-					document.getElementById("displayTotalPrice").value = (totalAscenseurcorpo * 15400) + ((totalAscenseurcorpo * 15400) / 16);
+					document.getElementById("displayInstallPrice").value = (totalAscenseurcorpo * 15400) * 0.16;
+					document.getElementById("displayTotalPrice").value = (totalAscenseurcorpo * 15400) + ((totalAscenseurcorpo * 15400) * 0.16);
 				}
 				else if (servicelol ==="hybrid" && quality ==="Standard") {
 
 					document.getElementById("displayElevatorQuantity").value = parseInt(totalAscenseurhyb);
 					document.getElementById("displayElevPrice").value = totalAscenseurhyb * 7565;
-					document.getElementById("displayInstallPrice").value = (totalAscenseurhyb * 7565) / 10;
-					document.getElementById("displayTotalPrice").value = (totalAscenseurhyb * 7565) + ((totalAscenseurhyb * 7565) / 10);
+					document.getElementById("displayInstallPrice").value = (totalAscenseurhyb * 7565) * 0.10;
+					document.getElementById("displayTotalPrice").value = (totalAscenseurhyb * 7565) + ((totalAscenseurhyb * 7565) * 0.10);
 				}
 				else if (servicelol ==="hybrid" && quality ==="Premium") {
 					document.getElementById("displayElevatorQuantity").value = totalAscenseurhyb;
 					document.getElementById("displayElevPrice").value = totalAscenseurhyb * 12345;
-					document.getElementById("displayInstallPrice").value = (totalAscenseurhyb * 12345) / 13;
-					document.getElementById("displayTotalPrice").value = (totalAscenseurhyb * 12345) + ((totalAscenseurhyb * 12345) / 13);
+					document.getElementById("displayInstallPrice").value = (totalAscenseurhyb * 12345) * 0.13;
+					document.getElementById("displayTotalPrice").value = (totalAscenseurhyb * 12345) + ((totalAscenseurhyb * 12345) * 0.13);
 				}
 				else if (servicelol ==="hybrid" && quality ==="Excelium") {
 
 					document.getElementById("displayElevatorQuantity").value = totalAscenseurhyb;
 					document.getElementById("displayElevPrice").value = totalAscenseurhyb * 15400;
-					document.getElementById("displayInstallPrice").value = (totalAscenseurhyb * 15400) / 16;
-					document.getElementById("displayTotalPrice").value = (totalAscenseurhyb * 15400) + ((totalAscenseurhyb * 15400) / 16);
+					document.getElementById("displayInstallPrice").value = (totalAscenseurhyb * 15400) * 0.16;
+					document.getElementById("displayTotalPrice").value = (totalAscenseurhyb * 15400) + ((totalAscenseurhyb * 15400) * 0.16);
 				}	
 	
 

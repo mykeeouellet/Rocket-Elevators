@@ -42,16 +42,21 @@ body {
 
 #form1 #form2 #form3 #form4 {
     color: white;
+    width: 100%;
+    margin: 50px;
+    line-height: 5px;
+    border-color: black;
+    
 
 
 }
 
 .button {
     background-color: rgb(255, 0, 0);
-    border: none;
+    border-color: red;
     color: white;
     padding: 10px 20px;
-    text-align: center;
+    text-align: left;
     font-size: 16px;
     cursor: pointer;
     margin-left: 10px;
@@ -60,3 +65,30 @@ body {
   .button:hover {
     background-color: rgb(133, 4, 4);
   }
+  .results {
+      color: white;
+      font-size: larger;
+
+  }
+
+    #form1 label {
+    color: white;
+    letter-spacing: 2px;
+    
+  }
+
+    #form2 label {
+    color: white;
+    letter-spacing: 2px;
+
+  }
+
+    #form3 label {
+    color: white;
+    letter-spacing: 2px;
+  }
+
+    #form4 label {
+        color: white;
+        letter-spacing: 2px;
+    }

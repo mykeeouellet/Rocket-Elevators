@@ -5,7 +5,8 @@ body {
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background-size: cover;;
+    background-size: cover;
+    font-family: 'Roboto';
    
 }
 
@@ -130,7 +131,6 @@ body {
     border: none;
     padding: 5px;
     margin: 5px;
-    max-width: 100%;
     display: block;
 }
 
@@ -141,7 +141,6 @@ body {
     border: none;
     padding: 5px;
     margin: 5px;
-    max-width: 100%;
     display: block;
 }
 
@@ -152,7 +151,6 @@ body {
     border: none;
     padding: 5px;
     margin: 5px;
-    max-width: 100%;
     display: block;
 }
 
@@ -163,7 +161,6 @@ body {
     border-radius: 8px;
     padding: 5px;
     margin: 5px;
-    max-width: 100%;
     
     
     
